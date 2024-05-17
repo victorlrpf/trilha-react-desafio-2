@@ -15,7 +15,7 @@ function App() {
 
 
   const handleSearchRepo = async () => {
-
+// TODO Fazer uma forma mais clara de buscar, como uma area para o usuario e outra para o repositorio
     const {data} = await api.get(`repos/${currentRepo}`)
 
     if(data.id){
@@ -35,8 +35,9 @@ function App() {
 
   const handleRemoveRepo = (id) => {
     console.log('Removendo registro', id);
-
     // utilizar filter.
+    const updateRpos = repos.filter(repo => repo.id !== id);
+    setRepos(updateRpos);
   }
 
 
